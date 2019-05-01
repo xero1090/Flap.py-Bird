@@ -5,6 +5,7 @@ import pygame
 from pygame.locals import *  
 import sys
 import random
+import os
 
 class Bird:
     def __init__(self):
