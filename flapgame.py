@@ -21,11 +21,21 @@ class Bird:
         self.wallUp = pygame.image.load("images/bottom.png").convert_alpha()
         self.wallDown = pygame.image.load("images/top.png").convert_alpha()
         self.death = False
-        
+        self.spriteNum = 0
+
     def move(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 os._exit(1)
             keys = pygame.key.get_pressed()
         for key in keys:
-            if keys[pygame.K_LEFT]:
+            if keys[pygame.K_UP]:
+                self.spriteNum = 1
+    def run(self):
+        while True:
+            self.screen.fill((255, 255, 255))
+            self.screen.blit(self.background, (0, 0))
+            pygame.display.update()
+
+Bird().run()
+
